@@ -45,13 +45,23 @@ public class Board {
 		 *     
 		 */
 		
+		String builder = "";
+		
 		//setup loops to visit
 		//every spot possible
 		
+		for(int r = 0; r < board.length; r++) {
+			for (int c = 0; c < board.length; c++) {
+				builder += String.format("%04d", board[r][c]);
+				builder += " ";
+				}
+				builder += "\n";
+			}
+			return builder;
+		}
+	
 		
 		
-		return "";
-	}
 
 	/*
 	 * set one of the empty spaces (at random)
