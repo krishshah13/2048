@@ -41,9 +41,9 @@ public class Board {
 		 * An example is shown below. 
 		 * String str = String.format("%04d", 9);  // 0009  
 		 * int x = 30;
-		 * System.out.println(String.format("%04d",x));
+		 * System.out.println(String.format("%04d",x)); 
 		 *     
-		 */
+		 */ 
 		
 		String builder = "";
 		  
