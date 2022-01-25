@@ -46,7 +46,7 @@ public class Board {
 		 */
 		
 		String builder = "";
-		
+		 
 		//setup loops to visit
 		//every spot possible
 		
