@@ -43,7 +43,7 @@ public class Board {
 		 * int x = 30;
 		 * System.out.println(String.format("%04d",x)); 
 		 *     
-		 */ 
+		 */  
 		
 		String builder = "";
 		  
