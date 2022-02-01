@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class Activity2Tester {
 
@@ -8,7 +9,12 @@ public class Activity2Tester {
 		//does it fill a random location? How about if the board is almost
 		//full? Does it still work?
 		
+		Board b = new Board();
+		b.populateOne();
+		System.out.println(b);		
+		
 		
 	}
 
 }
+ 

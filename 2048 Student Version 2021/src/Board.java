@@ -3,7 +3,7 @@ import java.util.Random;
 public class Board {
  
 	private int[][] board; // holds state of game
-	private Random rnd = new Random(0); // setup random # generator
+	private Random rnd = new Random(); // setup random # generator
 	
 	//What instance variable can you add to keep track of the size or the number of tiles occupied?
 	
@@ -14,8 +14,6 @@ public class Board {
 		
 		// instantiate the board
 		board = new int[4][4];
-		populateOne();
-		populateOne();
 	}
 
 	/*
@@ -81,12 +79,28 @@ public class Board {
 		// generate another set of row and column
 		// what happens if the entire board is full??! 
 		
-		
-		
-			
-
+		int r = rnd.nextInt(4);
+		int c = rnd.nextInt(4);		
+		if (board[r][c] == 0) {
+			if (Math.random() < 0.9) {
+				board[r][c] = 2;
+			} else {
+				board[r][c] = 4;
+			}
+		}
 	}
 
+	
+	//eraseBoard
+	
+	public void eraseBoard() {
+		for(int r = 0; r < board.length; r++) {
+			for (int c = 0; c < board.length; c++) {
+				board[r][c] = 0;
+				}
+			}
+	}
+	
 	/*
 	 * 
 	 * Given an array of integers, slide all non-zero elements to the right.
@@ -99,9 +113,14 @@ public class Board {
 	 */
 
 	public void slideRight(int[] row) {
-		
-
-	
+		for(int i = 0; i < 3; i++) {
+			for (int j = 0; j < row.length-1; j++) {
+				if(row[j] != 0 && row[j+1] == 0) {
+					row[j+1] = row[j];
+					row[j] = 0;
+				}
+			}
+		}
 	}
 
 	/*
@@ -118,9 +137,11 @@ public class Board {
 	public void slideRight() {
 
 		// go through 2D array, move all digits as far right as possible
-		//setup a loop to grab ONE row at a time from 2d array board
-	
-		
+		//setup a loop to grab ONE row a time from 2d array board
+		for(int r = 0; r < board.length; r++) {
+			int[] temp = board[r];
+			slideRight(temp);
+		}	
 	}
 
 	/**
@@ -133,9 +154,14 @@ public class Board {
 	 */
 
 	public void slideLeft(int[] arr) {
-		
-		
-		
+		for(int i = 0; i < 3; i++) {
+			for (int j = 0; j < arr.length-1; j++) {
+				if(arr[j+1] != 0 && arr[j] == 0) {
+					arr[j] = arr[j+1];
+					arr[j+1] = 0;
+				}
+			}
+		}
 	}
 
 	/*
@@ -149,7 +175,10 @@ public class Board {
 		// grabbing a row from a 2D array
 		// if it's called arr then arr[i] grabs ONE row!
 	
-		
+		for(int r = 0; r < board.length; r++) {
+			int[] temp = board[r];
+			slideLeft(temp);
+		}
 		
 		//visit every single row in the 2D array
 		//call the slideLeft method that takes in one argument
@@ -279,7 +308,7 @@ public class Board {
 	}
 
 	public void down() {
-
+		
 	}
 	
 	
