@@ -134,7 +134,7 @@ public class Board {
 	 * return: none
 	 */
 
-	public void slideRight() {
+	public void slideRight() { 
 
 		// go through 2D array, move all digits as far right as possible
 		//setup a loop to grab ONE row a time from 2d array board
