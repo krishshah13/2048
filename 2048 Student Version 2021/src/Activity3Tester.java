@@ -12,7 +12,7 @@ public class Activity3Tester {
 		
 				
 		//invoke the slideRight method on the array 
-		System.out.println(Arrays.toString(array));
+		System.out.println(array);
 		
 		//print out the array to see if slideRight
 		//worked
