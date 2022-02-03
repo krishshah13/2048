@@ -223,7 +223,7 @@ public class Board {
 			for(int c = 0; c< board[0].length-1; c++) {
 				if (board[r][c] == board[r][c+1]) {
 					board[r][c] = board[r][c]*2;
-					board[r][c +1] = 0;
+					board[r][c+1] = 0;
 				}
 			}
 		}
